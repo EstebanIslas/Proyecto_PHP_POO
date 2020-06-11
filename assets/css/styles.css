@@ -268,3 +268,20 @@ button{
     color: #555555;
     margin-bottom: 10px;
 }
+
+
+/*Pie de Pagina*/
+#footer{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background: #222222;
+    clear: both;
+    border-top: 4px solid #01b1ea;
+}
+
+#footer a{
+    text-decoration: none;
+    color: white;
+}
