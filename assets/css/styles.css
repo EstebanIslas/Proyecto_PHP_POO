@@ -115,7 +115,7 @@ a:hover{
 
 /*Barra Lateral*/
 #lateral{
-    width: 25%;
+    width: 22%;
     min-height: 500px;
     float: left;
     margin-top: 20px;
@@ -213,6 +213,28 @@ button{
     margin-top: 3px;
     margin-bottom: 3px;
 }
+
+
+/*Central*/
+#central{
+    width: 70%;
+    float: right;
+    border-left: 1px solid #cccccc;
+    box-shadow: -5px -1px 5px #dddddd;
+    padding: 25px;
+}
+
+#central h1{
+    font-size: 24px;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
+    padding: 15px;
+    padding-top: 0px;
+}
+
 
 /*Productos*/
 .product img{
