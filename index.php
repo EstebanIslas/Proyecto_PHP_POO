@@ -1,107 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <title>Tienda de Ropa</title>
-    </head>
-    <body>
-        
-        <div id="container">
-        
-            <!--Cabecera-->
+<?php
 
-            <header id="header">
-            
-                <div id="logo">
-                    <img src="assets/img/camiseta.png" alt="Camiseta Logo">
-                    <a href="index.php"> Tienda de Camisetas </a>
-                </div>
-            
-            </header>
-            
-            <!--Menu-->
-                
-                <nav id="menu">
-                    <ul>
-                        <li>
-                            <a href="#">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria1</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria2</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria3</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria4</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria5</a>
-                        </li>
-                        
-                    </ul>
-                </nav>
+/*
+ * Controlador frontal que se encarga de recojer parametros get
+ * y ver a que controlador pertenece cargar ese archivo y objeto
+ * y posterior llama al metodo correspondiente
+ */
 
-            
 
-            <div id="content">
-                <!--Barra Lateral-->
-                <aside id="lateral">
-                    <div id="login" class="block_aside">
-                        <h3>Ingresar a la web</h3>
-                        <form action="#" method="POST">
-                            <label for="email">Email</label>
-                            <input type="email" name="email">
-                            <label for="passwors">Contraseña</label>
-                            <input type="password" name="password">
+require_once 'autoload.php'; #Tener acceso a todos los controladoresS
 
-                            <input type="submit" value="Ingresar">
-                        </form>
-                        <ul>
-                            <li><a href="#">Mis Pedidos</a></li>
-                            <li><a href="#">Gestionar Pedidos</a></li>
-                            <li><a href="#">Gesionar Categorias</a></li>
-                        </ul>
-                    </div>
-                </aside>
-            
+#Comprobar que llegan todos los controladores 
+if (isset($_GET['controller'])) {
+    $nombre_controlador = $_GET['controller'].'Controller';
+}else {
+    echo 'La pagina no existe! (Validación de nombre_controlador)';
+    exit(); #Deja de ejecutar el codigo sincrono
+}
 
-                <!--Contenido Central-->
+#Comprobar si existe el controlador
+if (class_exists($nombre_controlador)) {
+    $controlador = new $nombre_controlador();
 
-                <div id="central">
-                    <h1>Productos Destacados</h1>
+    #Comprobar si existe el metodo en el controlador 
+    if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) { 
+        #Llama a una acción por Get en la url
+        $action = $_GET['action'];
+        $controlador->$action();
+    }else {
+        echo 'La pagina no existe! Validacion de acción y/o Metodo';
+    }
 
-                    <div class="product">
-                        <img src="assets/img/camiseta.png">
-                        <h2>Camiseta Azul Hancha</h2>
-                        <p>30 euros</p>
-                        <a href="" class="button">Comprar</a>
-                    </div>
-
-                    <div class="product">
-                        <img src="assets/img/camiseta.png">
-                        <h2>Camiseta Azul Hancha</h2>
-                        <p>30 euros</p>
-                        <a href="" class="button">Comprar</a>
-                    </div>
-
-                    <div class="product">
-                        <img src="assets/img/camiseta.png">
-                        <h2>Camiseta Azul Hancha</h2>
-                        <p>30 euros</p>
-                        <a href="" class="button">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <!--Pie de Pagina-->
-            <footer id="footer">
-                <p>Desarrollado por <a href="https://www.facebook.com/esteban.islassantos">Esteban Islas</a> &copy; <?=date('Y');?></p>
-            </footer>
-        </div>
-    </body>
-</html>
+}else {
+    echo 'La pagina no existe! Validacion de clase nombre_controlador';
+}
