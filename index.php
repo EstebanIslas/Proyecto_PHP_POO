@@ -53,6 +53,7 @@
                 <!--Barra Lateral-->
                 <aside id="lateral">
                     <div id="login" class="block_aside">
+                        <h3>Ingresar a la web</h3>
                         <form action="#" method="POST">
                             <label for="email">Email</label>
                             <input type="email" name="email">
@@ -61,39 +62,41 @@
 
                             <input type="submit" value="Ingresar">
                         </form>
-                        <a href="#">Mis Pedidos</a>
-                        <a href="#">Gestionar Pedidos</a>
-                        <a href="#">Gesionar Categorias</a>
+                        <ul>
+                            <li><a href="#">Mis Pedidos</a></li>
+                            <li><a href="#">Gestionar Pedidos</a></li>
+                            <li><a href="#">Gesionar Categorias</a></li>
+                        </ul>
                     </div>
                 </aside>
+            
+
+                <!--Contenido Central-->
+
+                <div id="central">
+
+                    <div class="product">
+                        <img src="assets/img/camiseta.png">
+                        <h2>Camiseta Azul Hancha</h2>
+                        <p>30 euros</p>
+                        <a href="">Comprar</a>
+                    </div>
+
+                    <div class="product">
+                        <img src="assets/img/camiseta.png">
+                        <h2>Camiseta Azul Hancha</h2>
+                        <p>30 euros</p>
+                        <a href="">Comprar</a>
+                    </div>
+
+                    <div class="product">
+                        <img src="assets/img/camiseta.png">
+                        <h2>Camiseta Azul Hancha</h2>
+                        <p>30 euros</p>
+                        <a href="">Comprar</a>
+                    </div>
+                </div>
             </div>
-
-            <!--Contenido Central-->
-
-            <div id="central">
-
-                <div class="product">
-                    <img src="assets/img/camiseta.png">
-                    <h2>Camiseta Azul Hancha</h2>
-                    <p>30 euros</p>
-                    <a href="">Comprar</a>
-                </div>
-
-                <div class="product">
-                    <img src="assets/img/camiseta.png">
-                    <h2>Camiseta Azul Hancha</h2>
-                    <p>30 euros</p>
-                    <a href="">Comprar</a>
-                </div>
-
-                <div class="product">
-                    <img src="assets/img/camiseta.png">
-                    <h2>Camiseta Azul Hancha</h2>
-                    <p>30 euros</p>
-                    <a href="">Comprar</a>
-                </div>
-            </div>
-
             <!--Pie de Pagina-->
             <footer id="footer">
                 <p>Desarrollado por Esteban Islas &copy; <?=date('Y');?></p>

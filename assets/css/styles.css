@@ -2,12 +2,12 @@
 
 *{
     padding: 0px;
-    margin: 0px;
+    margin: 0px; /*Margenes exactos*/
     font-family: sans-serif, Helvetica, Arial;
 }
 
 body{
-    background: url(../img/bg.png);
+    background: url(../img/bg.png); /*Imagen de Fondo*/
 }
 
 
@@ -15,12 +15,12 @@ a{
     color: #01b1ea;
 }
 
-a:visited{
+a:visited{ /*Para que los enlaces nunca cambien de color*/
     color: #01b1ea;
 }
 
 a:hover{
-    color: #555555;
+    color: #555555; /*Cuando el usuario pasa por encima de a*/
 }
 
 /*Container*/
@@ -39,7 +39,7 @@ a:hover{
 }
 
 #logo{
-    padding: 30px;
+    padding: 20px;
     margin-left: 20px;
     float: left;
 
@@ -56,7 +56,7 @@ a:hover{
     font-size: 40px;
     letter-spacing: 4px;
     font-family: 'Open Sans', 'Helvetica Neue';
-    text-transform: uppercase;
+    text-transform: uppercase; /*Poner en mayusculas*/
     color: #01B1EA;
     font-weight: bold;
     text-decoration: none;
@@ -71,13 +71,14 @@ a:hover{
     clear: both;
     background: #222222;
     color: white;
-    height: 50px;
+    height: 55px;
     border-bottom: 4px solid #01b1ea;
     
 }
 
 #menu ul{
     list-style: none;
+    text-decoration: none;
     margin: 0px auto;
     margin-left: 25px;
 }
@@ -93,7 +94,7 @@ a:hover{
     color: white;
     text-decoration: none;
     padding-left: 10px;
-    padding-right: 13px;
+    padding-right: 10px;
     transition: all 300ms;
 }
 
@@ -103,6 +104,114 @@ a:hover{
 
 #menu a:hover{
     background: #01b1ea;
+}
+
+/*Content*/
+#content{
+    margin: 0px auto;
+    overflow: hidden; /*ocultar lo que sobresalga*/
+    background: white;
+}
+
+/*Barra Lateral*/
+#lateral{
+    width: 25%;
+    min-height: 500px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#lateral .block_aside{
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+#lateral h3{
+    display: block;
+    color: #222222;
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #e1e1e1;
+    border-bottom: 2px solid #01b1ea;
+}
+
+/*Forms*/
+
+
+
+label,
+input[type='text'], 
+input[type='password'],
+input[type='email'],
+select{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+
+
+input[type='text'], 
+input[type='password'],
+input[type='email'],
+select{
+    border: 1px solid #c9c9c9;
+    box-shadow: 0px 0px 2px #cccccc inset;
+    background: white;
+    padding: 2px;
+    color: gray;
+    transition: all 300ms;
+}
+
+input[type='text']:focus, 
+input[type='password']:focus,
+input[type='email']:focus{
+    border: 1px solid #1579b5;
+    color: black;
+}
+
+input[type='button'],
+input[type='submit'],
+button{
+    display: block;
+    border-radius: 2px;
+    width: auto;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background: #2979cd;
+    border: 1px solid #11608e;
+    cursor: pointer;
+}
+
+label,
+input[type='button'],
+input[type='submit'],
+button{
+    display: block;
+    margin-top: 10px;
+}
+
+#lateral ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#lateral ul li{
+    list-style: square;
+    margin-left: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 /*Productos*/
