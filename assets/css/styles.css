@@ -181,7 +181,7 @@ input[type='email']:focus{
 
 input[type='button'],
 input[type='submit'],
-button{
+button, .button{
     display: block;
     border-radius: 2px;
     width: auto;
@@ -192,6 +192,12 @@ button{
     background: #2979cd;
     border: 1px solid #11608e;
     cursor: pointer;
+}
+
+.button{
+    background: #33ae3d;
+    color: white !important;
+    text-decoration: none;
 }
 
 label,
@@ -218,6 +224,7 @@ button{
 /*Central*/
 #central{
     width: 70%;
+    min-height: 500px;
     float: right;
     border-left: 1px solid #cccccc;
     box-shadow: -5px -1px 5px #dddddd;
@@ -237,6 +244,27 @@ button{
 
 
 /*Productos*/
+.product{
+    width: 30%;
+    /*border-right: 1px solid #cccccc;*/
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
 .product img{
     width: 100px;
+    margin-bottom: 10px;
+}
+
+.product h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p{
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 10px;
 }
