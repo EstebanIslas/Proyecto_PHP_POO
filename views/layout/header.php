@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css">
         <title>Tienda de Ropa</title>
     </head>
     <body>
@@ -14,8 +14,9 @@
 
             <header id="header">
             
+                <!-- Utilizar url_base para acceder -->
                 <div id="logo">
-                    <img src="assets/img/camiseta.png" alt="Camiseta Logo">
+                    <img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta Logo">
                     <a href="index.php"> Tienda de Camisetas </a>
                 </div>
             

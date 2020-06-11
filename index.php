@@ -8,16 +8,27 @@
 
 
 require_once 'autoload.php'; #Tener acceso a todos los controladoresS
+require_once 'config/parameters.php'; #importar la constante base_url
 require_once 'views/layout/header.php'; #Acceso al header
 require_once 'views/layout/sidebar.php'; #Acceso la barra lateral
 
+#Funcion para llamar controlador de errores
+function show_error()
+{
+    #Redireccionar al controlador de errores
+    $error = new errorController();
+    $error->index();
+}
 
 #Comprobar que llegan todos los controladores 
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'].'Controller';
-}else {
-    echo 'La pagina no existe! (Validación de nombre_controlador)';
-    exit(); #Deja de ejecutar el codigo sincrono
+}elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
+    $nombre_controlador = controller_default; #Redirigir pagina a la predeterminada 
+}
+else {
+    show_error();
+    exit();
 }
 
 #Comprobar si existe el controlador
@@ -29,12 +40,15 @@ if (class_exists($nombre_controlador)) {
         #Llama a una acción por Get en la url
         $action = $_GET['action'];
         $controlador->$action();
+    }elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
+        $default = action_default;
+        $controlador->$default();
     }else {
-        echo 'La pagina no existe! Validacion de acción y/o Metodo';
+        show_error();
     }
 
 }else {
-    echo 'La pagina no existe! Validacion de clase nombre_controlador';
+    show_error();
 }
 
 require_once 'views/layout/footer.php'; #Acceso al pie de pagina 
