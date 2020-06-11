@@ -17,7 +17,7 @@
                 <!-- Utilizar url_base para acceder -->
                 <div id="logo">
                     <img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta Logo">
-                    <a href="index.php"> Tienda de Camisetas </a>
+                    <a href="<?=base_url?>"> T-Shirt Store </a>
                 </div>
             
             </header>
