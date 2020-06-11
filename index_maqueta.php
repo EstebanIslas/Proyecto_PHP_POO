@@ -23,31 +23,30 @@
             
             <!--Menu-->
                 
-                <nav id="menu">
-                    <ul>
-                        <li>
-                            <a href="#">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria1</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria2</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria3</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria4</a>
-                        </li>
-                        <li>
-                            <a href="#">Categoria5</a>
-                        </li>
-                        
-                    </ul>
-                </nav>
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">Categoria1</a>
+                    </li>
+                    <li>
+                        <a href="#">Categoria2</a>
+                    </li>
+                    <li>
+                        <a href="#">Categoria3</a>
+                    </li>
+                    <li>
+                        <a href="#">Categoria4</a>
+                    </li>
+                    <li>
+                        <a href="#">Categoria5</a>
+                    </li>
+                    
+                </ul>
+            </nav>
 
-            
 
             <div id="content">
                 <!--Barra Lateral-->
@@ -97,11 +96,11 @@
                         <a href="" class="button">Comprar</a>
                     </div>
                 </div>
-            </div>
-            <!--Pie de Pagina-->
-            <footer id="footer">
-                <p>Desarrollado por <a href="https://www.facebook.com/esteban.islassantos">Esteban Islas</a> &copy; <?=date('Y');?></p>
-            </footer>
+            </div>            
         </div>
+        <!--Pie de Pagina-->
+        <footer id="footer">
+            <p>Desarrollado por <a href="https://www.facebook.com/esteban.islassantos">Esteban Islas</a> &copy; <?=date('Y');?></p>
+        </footer>
     </body>
 </html>

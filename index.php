@@ -8,6 +8,9 @@
 
 
 require_once 'autoload.php'; #Tener acceso a todos los controladoresS
+require_once 'views/layout/header.php'; #Acceso al header
+require_once 'views/layout/sidebar.php'; #Acceso la barra lateral
+
 
 #Comprobar que llegan todos los controladores 
 if (isset($_GET['controller'])) {
@@ -33,3 +36,5 @@ if (class_exists($nombre_controlador)) {
 }else {
     echo 'La pagina no existe! Validacion de clase nombre_controlador';
 }
+
+require_once 'views/layout/footer.php'; #Acceso al pie de pagina 
