@@ -19,27 +19,39 @@ class usuarioController{
     {
         #Valida si existen los valores
         if (isset($_POST)) {
-            #llamar al metodo save del modelo
-            $usuario = new Usuario();
+            
+            #Validación Basica
+            $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
+            $apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : false;
+            $email = isset($_POST['email']) ? $_POST['email'] : false;
+            $password = isset($_POST['password']) ? $_POST['password'] : false;
 
-            #Pasar datos al modelo
-            $usuario->setNombre($_POST['nombre']);
-            $usuario->setApellidos($_POST['apellidos']);
-            $usuario->setEmail($_POST['email']);
-            $usuario->setPassword($_POST['password']);
+            if ($nombre && $apellidos && $email && $password) {
+                #llamar al metodo save del modelo
+                $usuario = new Usuario();
 
-            #guardar en BD
-            $save = $usuario->save();
+                #Pasar datos al modelo
+                $usuario->setNombre($nombre);
+                $usuario->setApellidos($apellidos);
+                $usuario->setEmail($email);
+                $usuario->setPassword($password);
 
-            if ($save) {
-                #Crear una sesión
-                $_SESSION['register'] = "complete";
-                //echo "<h4>Usuario Registrado Correctamente!!</h4>";
-            }else {
-                #Crear una Sesión
+                #guardar en BD
+                $save = $usuario->save();
+
+                if ($save) {
+                    #Crear una sesión
+                    $_SESSION['register'] = "complete";
+                    //echo "<h4>Usuario Registrado Correctamente!!</h4>";
+                }else {
+                    #Crear una Sesión
+                    $_SESSION['register'] = "failed";
+                    //echo "<h4>Error!! Fallo al registrar usuario</h4>"; 
+                }
+            } else {
                 $_SESSION['register'] = "failed";
-                //echo "<h4>Error!! Fallo al registrar usuario</h4>"; 
             }
+            
             header("Location:".base_url.'usuario/registro'); #Redirige al registro
         }
     }
