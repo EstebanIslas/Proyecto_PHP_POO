@@ -1,11 +1,13 @@
 <h1>Registrarse</h1>
 
 <!--Mostrar Sesión de Registro-->
-<?php if(isset($_SESSION['register']) && $_SESSION['register']): ?>
+<?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'complete'): ?>
     <strong>Usuario Registrado Correctamente</strong>
-<?php else:?>
+<?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'):?>
     <strong>Fallo al Registrar Usuario</strong>
 <?php endif;?>
+
+<?php Utils::deleteSession('register')?>
 
 <!--Formulario que va al metodo del controlador save -->
 <form action="<?=base_url?>usuario/save" method="POST">

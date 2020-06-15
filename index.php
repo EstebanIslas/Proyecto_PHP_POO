@@ -10,6 +10,7 @@ session_start(); #Tener la sesion inicializada todo el proyecto
 require_once 'autoload.php'; #Tener acceso a todos los controladoresS
 require_once 'config/db.php'; #Acceso a la DB
 require_once 'config/parameters.php'; #importar la constante base_url
+require_once 'helpers/utils.php'; #Importar las librerias/metodos de ayuda
 require_once 'views/layout/header.php'; #Acceso al header
 require_once 'views/layout/sidebar.php'; #Acceso la barra lateral
 
