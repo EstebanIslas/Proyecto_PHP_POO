@@ -1,5 +1,12 @@
 <h1>Registrarse</h1>
 
+<!--Mostrar Sesión de Registro-->
+<?php if(isset($_SESSION['register']) && $_SESSION['register']): ?>
+    <strong>Usuario Registrado Correctamente</strong>
+<?php else:?>
+    <strong>Fallo al Registrar Usuario</strong>
+<?php endif;?>
+
 <!--Formulario que va al metodo del controlador save -->
 <form action="<?=base_url?>usuario/save" method="POST">
     
